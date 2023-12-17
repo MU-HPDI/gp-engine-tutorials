@@ -1,4 +1,6 @@
-# Big Data 2023 Tutorial: With Big Data Comes Big Compute
+# GP-ENGINE Tutorials
+
+#### Adapted from Big Data 2023 Tutorial: With Big Data Comes Big Compute
 Resources for the BigData 2023 Tutorial
 
 #### Material Authors: J. Alex Hurt, Anes Ouadou, Grant Scott 
