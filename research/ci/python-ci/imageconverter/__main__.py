@@ -1,0 +1,9 @@
+from .convert import convert_and_save
+from argparse import ArgumentParser
+
+parser = ArgumentParser(prog="imageconverter")
+parser.add_argument("-i", "--image", required=True)
+parser.add_argument("-o", "--output", required=True)
+args = parser.parse_args()
+
+convert_and_save(args.image, args.output)

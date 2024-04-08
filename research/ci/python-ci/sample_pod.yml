@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: python-pod
+
+spec:
+  containers:
+    - name: gpu-container
+      image: gitlab-registry.nrp-nautilus.io/jhurt/python-ci:2d77a2a9
+      imagePullPolicy: IfNotPresent
+      command: ["sleep", "infinity"]
+      resources:
+        limits:
+          memory: 12Gi
+          cpu: 2
+        requests:
+          memory: 12Gi
+          cpu: 2
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+              - key: topology.kubernetes.io/region
+                operator: In
+                values:
+                  - us-central
